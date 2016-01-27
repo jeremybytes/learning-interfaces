@@ -16,7 +16,7 @@ namespace PeopleViewer.MyService {
     public interface IPersonService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonService/GetPeople", ReplyAction="http://tempuri.org/IPersonService/GetPeopleResponse")]
-        PersonRepository.Interface.Person[] GetPeople();
+        System.Collections.Generic.List<PersonRepository.Interface.Person> GetPeople();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonService/GetPerson", ReplyAction="http://tempuri.org/IPersonService/GetPersonResponse")]
         PersonRepository.Interface.Person GetPerson(string lastName);
@@ -31,7 +31,7 @@ namespace PeopleViewer.MyService {
         void DeletePerson(string lastName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPersonService/UpdatePeople", ReplyAction="http://tempuri.org/IPersonService/UpdatePeopleResponse")]
-        void UpdatePeople(PersonRepository.Interface.Person[] updatedPeople);
+        void UpdatePeople(System.Collections.Generic.List<PersonRepository.Interface.Person> updatedPeople);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -61,7 +61,7 @@ namespace PeopleViewer.MyService {
                 base(binding, remoteAddress) {
         }
         
-        public PersonRepository.Interface.Person[] GetPeople() {
+        public System.Collections.Generic.List<PersonRepository.Interface.Person> GetPeople() {
             return base.Channel.GetPeople();
         }
         
@@ -81,7 +81,7 @@ namespace PeopleViewer.MyService {
             base.Channel.DeletePerson(lastName);
         }
         
-        public void UpdatePeople(PersonRepository.Interface.Person[] updatedPeople) {
+        public void UpdatePeople(System.Collections.Generic.List<PersonRepository.Interface.Person> updatedPeople) {
             base.Channel.UpdatePeople(updatedPeople);
         }
     }

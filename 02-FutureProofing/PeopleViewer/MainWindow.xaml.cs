@@ -16,7 +16,7 @@ namespace PeopleViewer
         private void ConcreteFetchButton_Click(object sender, RoutedEventArgs e)
         {
             var proxy = new PersonServiceClient();
-            Person[] people = proxy.GetPeople();
+            List<Person> people = proxy.GetPeople();
             foreach (var person in people)
                 PersonListBox.Items.Add(person);
         }
