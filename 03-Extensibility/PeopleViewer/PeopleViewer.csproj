@@ -97,6 +97,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PersonRepository.CSV\PersonRepository.CSV.csproj">
+      <Project>{22d242eb-8113-49e3-8cc9-03a41e3b185e}</Project>
+      <Name>PersonRepository.CSV</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
       <Project>{07234eac-b32f-4769-a4c5-83209a858829}</Project>
       <Name>PersonRepository.Interface</Name>

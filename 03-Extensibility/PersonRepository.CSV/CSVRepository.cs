@@ -22,19 +22,21 @@ namespace PersonRepository.CSV
 
             if (File.Exists(path))
             {
-                var sr = new StreamReader(path);
-                string line;
-                while ((line = sr.ReadLine()) != null)
+                using (var sr = new StreamReader(path))
                 {
-                    var elems = line.Split(',');
-                    var per = new Person()
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
                     {
-                        FirstName = elems[0],
-                        LastName = elems[1],
-                        StartDate = DateTime.Parse(elems[2]),
-                        Rating = Int32.Parse(elems[3])
-                    };
-                    people.Add(per);
+                        var elems = line.Split(',');
+                        var per = new Person()
+                        {
+                            FirstName = elems[0],
+                            LastName = elems[1],
+                            StartDate = DateTime.Parse(elems[2]),
+                            Rating = Int32.Parse(elems[3])
+                        };
+                        people.Add(per);
+                    }
                 }
             }
             return people;
