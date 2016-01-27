@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="RepositoryFactory.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,9 +98,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PersonRepository.CSV\PersonRepository.CSV.csproj">
+      <Project>{22d242eb-8113-49e3-8cc9-03a41e3b185e}</Project>
+      <Name>PersonRepository.CSV</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
       <Project>{07234eac-b32f-4769-a4c5-83209a858829}</Project>
       <Name>PersonRepository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.Service\PersonRepository.Service.csproj">
+      <Project>{c9cdfe5d-559b-4da5-942c-00dc41594566}</Project>
+      <Name>PersonRepository.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.SQL\PersonRepository.SQL.csproj">
+      <Project>{003702d8-e922-4539-80d4-15aab22ff29d}</Project>
+      <Name>PersonRepository.SQL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

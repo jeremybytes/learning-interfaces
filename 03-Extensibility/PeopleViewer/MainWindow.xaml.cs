@@ -12,17 +12,30 @@ namespace PeopleViewer
 
         private void ServiceFetchButton_Click(object sender, RoutedEventArgs e)
         {
-
+            FetchData("Service");
         }
 
         private void CSVFetchButton_Click(object sender, RoutedEventArgs e)
         {
-
+            FetchData("CSV");
         }
 
         private void SQLFetchButton_Click(object sender, RoutedEventArgs e)
         {
+            FetchData("SQL");
+        }
 
+        private void FetchData(string repositoryType)
+        {
+            ClearListBox();
+
+            IPersonRepository repository =
+                RepositoryFactory.GetRepository(repositoryType);
+            var people = repository.GetPeople();
+            foreach (var person in people)
+                PersonListBox.Items.Add(person);
+
+            ShowRepositoryType(repository);
         }
 
         private void ClearButton_Click(object sender, RoutedEventArgs e)
